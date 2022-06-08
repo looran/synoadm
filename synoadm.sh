@@ -45,6 +45,7 @@ push_ssl_cert)
 	cat $key |trace $SSH root@$ip "cat > /usr/syno/etc/certificate/_archive/$certname/privkey.pem"
 	trace $SSH root@$ip "chmod 600 /usr/syno/etc/certificate/_archive/$certname/privkey.pem"
 	trace $SSH root@$ip "/usr/syno/bin/synosystemctl restart nginx"
+	echo "[*] done, $ip now uses new SSL certificates"
 	;;
 set_htaccess)
 	[ $# -ne 2 ] && usageexit
@@ -58,10 +59,10 @@ auth_basic "$message";
 auth_basic_user_file /etc/nginx/htpasswd;
 _EOF
 	trace $SSH root@$ip "/usr/syno/bin/synosystemctl reload nginx"
+	echo "[*] done, $ip now has htaccess in place on all web services"
 	;;
 *)
 	usageexit
 	;;
 esac
 
-echo done
