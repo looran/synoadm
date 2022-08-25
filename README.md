@@ -38,3 +38,8 @@ $ ssh root@192.168.1.5 /usr/syno/bin/synosystemctl restart nginx
 ```bash
 $ sudo make install
 ```
+
+### Related projects
+
+Synology NAS file management from command-line
+* https://github.com/looran/synocli
