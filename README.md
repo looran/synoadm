@@ -17,9 +17,10 @@ environment variables
 ```
 
 **WARNING: when upgrading your Synology device using set_htaccess, you have to disable the htaccess and re-enable it afterwards.**
+
 Disabling htaccess can be done before or after reboot with the following command:
-``
-`mv /etc/nginx/conf.d/alias.htaccess.conf /root
+```
+mv /etc/nginx/conf.d/alias.htaccess.conf /root
 /usr/syno/bin/synosystemctl reload nginx
 ```
 After you first log-in and check everything is running fine, re-enable htaccess:
@@ -48,9 +49,11 @@ $ ssh root@192.168.1.5 /usr/syno/bin/synosystemctl restart nginx
 ### Prerequisite: have root access to your Synology device
 
 1. Get ssh access to your device
+
 see https://kb.synology.com/en-id/DSM/tutorial/How_to_login_to_DSM_with_root_permission_via_SSH_Telnet
 
 2. Allow 'root' user to log-in
+
 put your public key in /root/.ssh/authorized_keys
 
 ### Installation
