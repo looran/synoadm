@@ -16,7 +16,9 @@ environment variables
    SSH=ssh
 ```
 
-**WARNING: when upgrading your Synology device using set_htaccess, you have to disable the htaccess and re-enable it afterwards.**
+### Note when upgrading your Synology device
+
+If you are using `synoadm set_htaccess`, before upgrading your Synology device you have to disable the htaccess and re-enable it afterwards.
 
 Disabling htaccess can be done before or after reboot with the following command:
 ```
@@ -30,6 +32,8 @@ mv /root/alias.htaccess.conf /etc/nginx/conf.d/
 ```
 
 ### Example usage for push_ssl_cert
+
+`synoadm push_ssl_cert` will set custom SSL certificates for the web interface managed by nginx. It has not been tested with other Synology services.
 
 ```bash
 laptop $ synoadm 192.168.1.5 push_ssl_cert /tmp/domain.fullchain.pem /tmp/domain.key 
